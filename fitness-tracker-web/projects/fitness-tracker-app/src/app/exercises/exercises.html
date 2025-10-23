@@ -2,4 +2,20 @@
 
 <p>exercises works!</p>
 
-Sample data: {{exerciseService.getData()}}
+<div class="data">
+    <div>
+        Sample data: {{exerciseService.getData()}}
+    </div>
+
+    <div>
+        <p>Sample data: {{name}}</p>
+        <p>Sample data: {{name | uppercase}}</p>
+    </div>
+
+    <div>
+        <p>{{ dateofToday }}</p>
+        <p>{{ dateofToday | date }}</p>
+        <p>{{ dateofToday | date:'dd.MM.yyyy' }}</p>
+        <p>{{ dateofToday | date:'shortTime' }}</p>
+    </div>
+</div>
