@@ -93,6 +93,66 @@
           }
         }
       }
+    },
+    "training-lib": {
+      "projectType": "library",
+      "root": "projects/training-lib",
+      "sourceRoot": "projects/training-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/training-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/training-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/training-lib/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "exercise-lib": {
+      "projectType": "library",
+      "root": "projects/exercise-lib",
+      "sourceRoot": "projects/exercise-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/exercise-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/exercise-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/exercise-lib/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
