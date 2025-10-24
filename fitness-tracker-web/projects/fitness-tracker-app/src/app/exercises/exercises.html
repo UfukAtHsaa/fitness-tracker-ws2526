@@ -2,6 +2,12 @@
 
 <p>exercises works!</p>
 
+
+<div>
+    <button (click)="toggleHide()">Probier's!</button>
+</div>
+
+@if(!hide) {
 <div class="data">
     <div>
         Sample data: {{exerciseService.getData()}}
@@ -19,3 +25,22 @@
         <p>{{ dateofToday | date:'shortTime' }}</p>
     </div>
 </div>
+
+<div class="data">
+    List:
+    @for(ex of exercises; track $index) {
+    <ul>
+        <li>{{ex}}</li>
+    </ul>
+    }
+</div>
+
+<div class="data">
+    <input [(ngModel)]="username" placeholder="Name eingeben">
+    <p>Hallo, {{ username }}!</p>
+</div>
+
+<div>
+    <button (click)="buttonClicked()">Klick mich doch mal!</button>
+</div>
+}
