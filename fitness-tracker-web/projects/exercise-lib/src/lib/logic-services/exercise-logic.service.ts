@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ExerciseLogicService {
 
   public getData(): string {
-    return 'Value from ExerciseLogicService';
+    return 'Value from ExerciseLogicService +++ HOT RELOAD +++';
   }
 
 }
