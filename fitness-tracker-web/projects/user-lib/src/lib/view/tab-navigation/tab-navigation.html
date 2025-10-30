@@ -1,0 +1,8 @@
+<mat-tab-group [selectedIndex]="activeTabIndex" (selectedTabChange)="onTabChange($event)" mat-stretch-tabs="false"
+  mat-align-tabs="start">
+  <mat-tab label="User Management"></mat-tab>
+  <mat-tab label="User list"></mat-tab>
+  <!-- Add more tabs as needed -->
+</mat-tab-group>
+
+<router-outlet></router-outlet>

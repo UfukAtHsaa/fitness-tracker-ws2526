@@ -2,6 +2,9 @@
  * Public API Surface of user-lib
  */
 
+// ROUTE
+export * from './lib/user-lib.routes';
+
 // DOMAIN
 export * from './lib/domain';
 export * from './lib/domain/models';

@@ -1,0 +1,21 @@
+mat-card {
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.mat-card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.mat-card-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+div > p {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
