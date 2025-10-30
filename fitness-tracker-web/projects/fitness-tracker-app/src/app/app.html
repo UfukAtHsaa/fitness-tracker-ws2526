@@ -1,8 +1,12 @@
-<nav>
-  <a routerLink="/home" routerLinkActive="active">Home</a> |
-  <a routerLink="/about" routerLinkActive="active">About</a> |
-  <a routerLink="/exercises" routerLinkActive="active">Exercises</a>
-</nav>
+<mat-toolbar color="primary">
+  <span>Fitness Tracker</span>
+  <span class="spacer"></span>
+  <div class="menu">
+    <a mat-flat-button routerLink="/home" color="accent" class="nav-button">Home</a>
+    <a mat-flat-button routerLink="/exercises" color="accent" class="nav-button">Exercises</a>
+    <a mat-flat-button routerLink="/about" color="accent" class="nav-button">About</a>
+  </div>
+</mat-toolbar>
 
 <hr>
 
