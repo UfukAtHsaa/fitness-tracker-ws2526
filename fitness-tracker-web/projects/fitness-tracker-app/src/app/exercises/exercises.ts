@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { ExerciseLogicService } from '../../../../exercise-lib/src/lib/logic-services/exercise-logic.service'
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ExerciseLogicService } from '../../../../exercise-lib/src/lib/logic-services/exercise-logic.service';
 
 
 @Component({
