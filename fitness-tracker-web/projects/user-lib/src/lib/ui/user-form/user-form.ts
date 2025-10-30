@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'lib-user-form',
   imports: [],
   templateUrl: './user-form.html',
-  styleUrl: './user-form.css'
+  styleUrl: './user-form.scss',
+  standalone: true
 })
 export class UserForm {
 

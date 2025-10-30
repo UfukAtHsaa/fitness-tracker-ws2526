@@ -19,12 +19,6 @@
       "@user-lib": [
         "./projects/user-lib/src/public-api.ts"
       ],
-      "user-lib/domain": [
-        "projects/user-lib/src/lib/domain/index.ts"
-      ],
-      "user-lib/domain/models": [
-        "./projects/user-lib/src/lib/domain/models/index.ts"
-      ]
     }
   },
   "angularCompilerOptions": {

@@ -1,0 +1,8 @@
+<div class="user-management-container">
+  <div class="user-list">
+    <lib-user-list (userSelected)="onUserSelected($event)"></lib-user-list>
+  </div>
+  <div class="user-detail">
+    <lib-user-detail [user]="selectedUser"></lib-user-detail>
+  </div>
+</div>
