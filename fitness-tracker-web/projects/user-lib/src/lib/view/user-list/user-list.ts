@@ -29,6 +29,13 @@ export class UserListComponent implements OnInit {
   routerOutletEnabled: boolean = false;
 
   ngOnInit(): void {
+    this.loadUsers();
+    this.userBusinessService.createdUser$.subscribe((newUser) => {
+      this.dataSource = [...this.dataSource, newUser];
+    });
+  }
+
+  loadUsers(): void {
     this.routerOutletEnabled = false;
     this.userBusinessService.getAllUsers().subscribe(users => {
       this.dataSource = users;

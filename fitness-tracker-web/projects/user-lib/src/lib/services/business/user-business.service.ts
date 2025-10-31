@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { User } from '@user-lib';
-import { Observable, take, tap } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { UserProviderService } from '../providers/user-provider.service';
 
 @Injectable({
@@ -9,9 +9,15 @@ import { UserProviderService } from '../providers/user-provider.service';
 export class UserBusinessService {
 
   private userProviderService = inject(UserProviderService);
+  private createdUserSubject = new Subject<User>();
+  createdUser$ = this.createdUserSubject.asObservable();
 
   addUser(user: User): Observable<User> {
-    return this.userProviderService.createUser(user);
+    return this.userProviderService.createUser(user).pipe(
+      tap((createdUser) => {
+        this.createdUserSubject.next(createdUser);
+      })
+    );
   }
 
 
