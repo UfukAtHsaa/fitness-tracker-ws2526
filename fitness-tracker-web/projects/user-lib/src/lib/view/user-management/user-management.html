@@ -3,9 +3,9 @@
     <button mat-fab color="primary" aria-label="Add user" [routerLink]="[{ outlets: { dialog: ['add-user'] }  }]">
       <mat-icon>add</mat-icon>
     </button>
-    <lib-user-list (userSelected)="onUserSelected($event)"></lib-user-list>
+    <lib-user-list (userSelected)="onUserSelected($event)" [clickActionType]="userListClickAction"></lib-user-list>
   </div>
-  <div class="user-detail">
+  <div class=" user-detail">
     <lib-user-detail [user]="selectedUser"></lib-user-detail>
   </div>
 </div>

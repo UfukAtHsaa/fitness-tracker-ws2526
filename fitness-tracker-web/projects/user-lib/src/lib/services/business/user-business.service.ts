@@ -31,5 +31,7 @@ export class UserBusinessService {
       );
   }
 
-
+  getUserById(id: string): Observable<User> {
+    return this.userProviderService.getUserById(id);
+  }
 }

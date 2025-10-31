@@ -1,0 +1,12 @@
+/* Add your styles here */
+.user-profile-container {
+  padding: 20px;
+  padding-top: 60px; /* Increased padding to make space for the button */
+  position: relative;
+
+  .back-button {
+    position: absolute;
+    top: 20px; /* Keep button 20px from the top of the container */
+    left: 20px;
+  }
+}

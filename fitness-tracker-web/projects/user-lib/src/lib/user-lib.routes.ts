@@ -24,13 +24,13 @@ export const USER_LIB_ROUTES: Routes = [
         path: 'list',
         component: UserListComponent,
         children: [
-          {
-            path: ':id',
-            component: UserProfileComponent
-          },
+
         ]
       },
-
+      {
+        path: 'list/:id',
+        component: UserProfileComponent
+      },
     ]
   },
 

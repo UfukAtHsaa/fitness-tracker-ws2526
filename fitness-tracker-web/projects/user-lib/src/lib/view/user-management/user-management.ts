@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { User } from '../../domain/models/user';
-import { UserListComponent } from '../user-list/user-list';
+import { UserListClickAction, UserListComponent } from '../user-list/user-list';
 import { UserDetailComponent } from '../../ui/user-detail/user-detail';
 
 
@@ -17,6 +17,7 @@ import { UserDetailComponent } from '../../ui/user-detail/user-detail';
 })
 export class UserManagementComponent {
 
+  userListClickAction: UserListClickAction = UserListClickAction.EmitEvent;
   selectedUser: User | null = null;
 
   onUserSelected(user: User) {

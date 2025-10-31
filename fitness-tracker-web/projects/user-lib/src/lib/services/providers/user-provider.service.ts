@@ -19,4 +19,8 @@ export class UserProviderService {
   createUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiUrl, user);
   }
+
+  getUserById(id: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
+  }
 }

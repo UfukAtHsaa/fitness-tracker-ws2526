@@ -12,5 +12,7 @@ export * from './lib/domain/models';
 // UI -> NOT EXPORTED (intentionally uncommented)
 // export * from './lib/ui/user-form';
 
+export * from './lib/view/user-list/user-list';
+
 // VIEWS
 export * from './lib/view';

@@ -1,1 +1,8 @@
-<p>user-profile works!</p>
+<div class="user-profile-container">
+    <button mat-button="tonal" extended color="primary" (click)="goBack()" class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+        back
+    </button>
+    <h2>User Profile</h2>
+    <lib-user-form [user]="user"></lib-user-form>
+</div>
