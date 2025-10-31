@@ -1,6 +1,44 @@
 # FitnessTrackerWeb
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+## Create a basic workspace
+
+Initially generating a workspace.
+No APP oder LIBRARY will be generated.
+
+```bash
+ng new fitness-tracker-web --no-create-application
+```
+
+## Create application
+
+To generate an application use the following command:
+
+```bash
+ng g application fitness-tracker-app --routing true --style scss
+```
+
+## Generate components, services, ...
+
+### Components
+
+```bash
+ng g component --project fitness-tracker-app view-components/exercise-list
+ng g component --project fitness-tracker-app view-components/exercise-detail
+```
+
+### Services
+
+```bash
+ng g service --project fitness-tracker-app logic-services/exercise-logic
+ng g service --project fitness-tracker-app provider-services/exercise-provider
+```
+
+## Architecture
+
+If you decide to following the "application" and "library" approach this should fit to the following principle:
+
+![alt text](docs/assets/image.png)
+
 
 ## Development server
 

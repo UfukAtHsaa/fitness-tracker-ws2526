@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>{{ titleText }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+  </form>
+</div>
+@if(buttonVisible) {
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="submit()" [disabled]="form.invalid">{{buttonText}}</button>
+</div>
+}

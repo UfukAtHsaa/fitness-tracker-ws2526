@@ -3,6 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -13,7 +14,12 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "paths": {
+      "@user-lib": [
+        "./projects/user-lib/src/public-api.ts"
+      ],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -29,6 +35,24 @@
     },
     {
       "path": "./projects/fitness-tracker-app/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/training-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/training-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/exercise-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/exercise-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/user-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/user-lib/tsconfig.spec.json"
     }
   ]
 }

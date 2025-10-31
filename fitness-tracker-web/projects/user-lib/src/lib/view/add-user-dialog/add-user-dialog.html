@@ -1,0 +1,9 @@
+<div class="dialog-container">
+  <div mat-dialog-content>
+    <lib-user-form (save)="onSave($event)" [titleText]="'Add New User'" [buttonText]="'Add User'" [buttonVisible]="true"
+      (cancel)="close()"></lib-user-form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onClose()">Cancel</button>
+  </div>
+</div>
