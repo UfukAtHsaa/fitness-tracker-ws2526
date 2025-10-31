@@ -1,6 +1,6 @@
 <div class="user-management-container">
   <div class="user-list">
-    <button mat-fab color="primary" aria-label="Add user" [routerLink]="[{ outlets: { dialog: ['add-user'] }  }]">
+    <button mat-fab color="primary" aria-label="Add user" [routerLink]="['../', { outlets: { dialog: ['add-user'] } }]">
       <mat-icon>add</mat-icon>
     </button>
     <lib-user-list (userSelected)="onUserSelected($event)" [clickActionType]="userListClickAction"></lib-user-list>
