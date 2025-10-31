@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, inject, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { User } from '../../domain/models/user';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,6 +16,10 @@ export class UserFormComponent implements OnChanges {
   private fb = inject(FormBuilder);
 
   @Input() user: User | undefined;
+  @Input() buttonVisible: boolean | undefined = true;
+  @Input() buttonText: string | undefined = 'Save';
+
+  @Output() save = new EventEmitter<User>();
 
   form = this.fb.group({
     name: ['', Validators.required],
@@ -33,7 +37,7 @@ export class UserFormComponent implements OnChanges {
 
   submit() {
     if (this.form.valid) {
-      console.log(this.form.value);
+      this.save.emit(this.form.value as User);
     }
   }
 }

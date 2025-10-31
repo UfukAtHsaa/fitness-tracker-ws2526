@@ -10,14 +10,8 @@ export class UserBusinessService {
 
   private userProviderService = inject(UserProviderService);
 
-  createUser(user: User): User {
-    let created: User = { id: 0, name: '', email: '' };
-    this.userProviderService.createUser(user).subscribe((user: User) => {
-      // do some other stuff
-      created = user;
-      // and here as well?
-    });
-    return created;
+  addUser(user: User): Observable<User> {
+    return this.userProviderService.createUser(user);
   }
 
 

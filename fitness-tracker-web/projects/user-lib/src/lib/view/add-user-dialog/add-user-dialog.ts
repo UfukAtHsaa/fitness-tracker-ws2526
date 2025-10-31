@@ -1,25 +1,29 @@
 import { Component, inject } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Router, RouterModule } from '@angular/router';
 import { UserFormComponent } from '../../ui/user-form/user-form';
+import { UserBusinessService } from '../../services/business/user-business.service';
+import { User } from '../../domain/models/user';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'lib-add-user-dialog',
   standalone: true,
-  imports: [RouterModule, MatDialogModule],
+  imports: [RouterModule, UserFormComponent, MatDialogModule, MatButtonModule],
   templateUrl: './add-user-dialog.html',
   styleUrl: './add-user-dialog.scss',
 })
 export class AddUserDialogComponent {
-  private dialog = inject(MatDialog);
+  private userBusinessService = inject(UserBusinessService);
   private router = inject(Router);
 
-  constructor() {
-    this.dialog.open(UserFormComponent, {
-      width: '400px',
-      disableClose: true,
-    }).afterClosed().subscribe(() => {
-      this.router.navigate(['../'], { relativeTo: this.router.routerState.root });
+  onSave(user: User) {
+    this.userBusinessService.addUser(user).subscribe(() => {
+      this.onClose();
     });
+  }
+
+  onClose() {
+    this.router.navigate(['.', { outlets: { dialog: null } }]);
   }
 }

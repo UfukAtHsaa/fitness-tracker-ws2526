@@ -1,1 +1,9 @@
-<p>add-user-dialog works!</p>
+<div class="dialog-container">
+  <h1 mat-dialog-title>Add New User</h1>
+  <div mat-dialog-content>
+    <lib-user-form (save)="onSave($event)" [buttonText]="'Add User'" [buttonVisible]="true"></lib-user-form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onClose()">Cancel</button>
+  </div>
+</div>
