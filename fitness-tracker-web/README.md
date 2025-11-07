@@ -5,9 +5,13 @@
 Initially generating a workspace.
 No APP oder LIBRARY will be generated.
 
+This wil generate the frontend base project:
+
 ```bash
 ng new fitness-tracker-web --no-create-application
 ```
+Afterwards change into the new generated project directory via `cd  [project name]`.
+Then use the following command:
 
 ## Create application
 
