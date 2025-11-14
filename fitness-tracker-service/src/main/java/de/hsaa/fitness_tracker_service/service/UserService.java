@@ -1,5 +1,7 @@
 package de.hsaa.fitness_tracker_service.service;
 
+import de.hsaa.fitness_tracker_service.presentation.UserRequest;
+import de.hsaa.fitness_tracker_service.presentation.UserResponse;
 import de.hsaa.fitness_tracker_service.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,7 +20,8 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        return userRepository.save(user);
+        User savedUser = userRepository.save(user);
+        return savedUser;
     }
 
     public Optional<User> loadUserById(Long id) {
@@ -27,5 +30,17 @@ public class UserService {
 
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
+    }
+
+    public UserResponse createUserWithRequest(UserRequest userRequest) {
+        return null;
+    }
+
+    public UserResponse loadUserResponseById(Long userId) {
+        return null;
+    }
+
+    public UserResponse updateUserWithRequest(Long userId, UserRequest userRequest) {
+            return null;
     }
 }
