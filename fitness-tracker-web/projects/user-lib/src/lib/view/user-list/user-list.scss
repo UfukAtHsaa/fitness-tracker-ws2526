@@ -1,0 +1,17 @@
+.mat-mdc-table {
+    width: 100%;
+}
+
+.mat-mdc-header-cell {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.mat-mdc-row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.mat-mdc-row:hover {
+    background-color: #eeeeee;
+}

@@ -1,0 +1,46 @@
+<h2>Exercises</h2>
+
+<p>exercises works!</p>
+
+
+<div>
+    <button (click)="toggleHide()">Probier's!</button>
+</div>
+
+@if(!hide) {
+<div class="data">
+    <div>
+        Sample data: {{exerciseService.getData()}}
+    </div>
+
+    <div>
+        <p>Sample data: {{name}}</p>
+        <p>Sample data: {{name | uppercase}}</p>
+    </div>
+
+    <div>
+        <p>{{ dateofToday }}</p>
+        <p>{{ dateofToday | date }}</p>
+        <p>{{ dateofToday | date:'dd.MM.yyyy' }}</p>
+        <p>{{ dateofToday | date:'shortTime' }}</p>
+    </div>
+</div>
+
+<div class="data">
+    List:
+    @for(ex of exercises; track $index) {
+    <ul>
+        <li>{{ex}}</li>
+    </ul>
+    }
+</div>
+
+<div class="data">
+    <input [(ngModel)]="username" placeholder="Name eingeben">
+    <p>Hallo, {{ username }}!</p>
+</div>
+
+<div>
+    <button (click)="buttonClicked()">Klick mich doch mal!</button>
+</div>
+}

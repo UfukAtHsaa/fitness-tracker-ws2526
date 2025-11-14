@@ -1,0 +1,17 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.menu {
+    display: flex;
+    gap: 8px;
+}
+
+a.active {
+    font-weight: bold;
+    color: darkblue;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
