@@ -51,7 +51,7 @@ public class UserService {
 
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            if (user.getPassword().equals("{noop}" + password)) {
+            if (user.getPassword().equals(password)) {
                 return user;
             }
         }

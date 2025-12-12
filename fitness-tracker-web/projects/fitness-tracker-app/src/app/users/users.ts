@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { UserManagementComponent } from '@user-lib';
 
 @Component({
   selector: 'app-users',
-  imports: [UserManagementComponent],
+  imports: [],
   templateUrl: './users.html',
   styleUrl: './users.scss'
 })

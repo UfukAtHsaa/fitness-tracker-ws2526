@@ -30,7 +30,7 @@ class UserServiceTest {
         // Arrange
         Mockito.when(
                 userRepository.save(Mockito.any(User.class))
-        ).thenReturn(new User(1l, "ufuk", "email", 27, "adult"));
+        ).thenReturn(new User(1L, "ufuk", "ufuk", "password", "user", "email", 27, "adult"));
 
         // Act
         User returnedUser = userService.createUser(new User());
@@ -44,10 +44,10 @@ class UserServiceTest {
     void createUserWithExplicitUserInfoTest() {
 
         // Arrange
-        User userCreateRequest = new User(null,  "ufuk r", "email - r", 27, "adult r ");
+        User userCreateRequest = new User(null, "ufuk r", "ufuk r", "password", "user", "email - r", 27, "adult r ");
         Mockito.when(
                 userRepository.save(Mockito.eq(userCreateRequest))
-        ).thenReturn(new User(1l, "ufuk - a", "email", 27, "adult"));
+        ).thenReturn(new User(1L, "ufuk - a", "ufuk - a", "password", "user", "email", 27, "adult"));
 
         // Act
         User returnedUser = userService.createUser(userCreateRequest);

@@ -1,40 +1,39 @@
-<mat-toolbar color="primary">
-  <span>Fitness Tracker</span>
-  <span class="spacer"></span>
+<ng-container *ngIf="token$ | async; else login">
+  <mat-toolbar color="primary">
+    <span>Fitness Tracker</span>
+    <span class="spacer"></span>
 
-  <div class="menu">
+    <div class="menu">
+      <button mat-mini-fab extended color="accent" routerLink="/home" class="nav-button">
+        <mat-icon>home</mat-icon>
+      </button>
 
-    <button mat-mini-fab extended color="accent" routerLink="/home" class="nav-button">
-      <mat-icon>home</mat-icon>
-    </button>
+      <button mat-fab extended color="primary" routerLink="/exercises" class="nav-button">
+        <mat-icon>fitness_center</mat-icon>
+        Exercises
+      </button>
 
-    <button mat-fab extended color="primary" routerLink="/exercises" class="nav-button">
-      <mat-icon>fitness_center</mat-icon>
-      Exercises
-    </button>
+      @if(authService.hasRole('ROLE_ADMIN')) {
+      <button mat-button="elevated" extended color="accent" routerLink="/users" class="nav-button">
+        <mat-icon>assignment_ind</mat-icon>
+        Users
+      </button>
+      }
 
-    <button mat-button="elevated" extended color="accent" routerLink="/users" class="nav-button">
-      <mat-icon>assignment_ind</mat-icon>
-      Users
-    </button>
+      <button mat-button="text" extended color="accent" routerLink="/about" class="nav-button">
+        <mat-icon>info</mat-icon>
+        About
+      </button>
 
-    <button mat-button="text" extended color="accent" routerLink="/about" class="nav-button">
-      <mat-icon>info</mat-icon>
-      About
-    </button>
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
 
-
-
-
-    <a mat-flat-button routerLink="/home" color="accent" class="nav-button">Home</a>
-    <a mat-flat-button routerLink="/exercises" color="accent" class="nav-button">Exercises</a>
-    <a mat-flat-button routerLink="/users" color="accent" class="nav-button">Users</a>
-
-    <a mat-flat-button routerLink="/about" color="accent" class_="nav-button">About</a>
-
-  </div>
-</mat-toolbar>
-
-
-<router-outlet></router-outlet>
-<router-outlet name="dialog"></router-outlet>
+  <router-outlet></router-outlet>
+  <router-outlet name="dialog"></router-outlet>
+</ng-container>
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>
