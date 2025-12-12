@@ -43,4 +43,19 @@ public class UserService {
     public UserResponse updateUserWithRequest(Long userId, UserRequest userRequest) {
             return null;
     }
+
+
+
+    public User authenticate(String username, String password) {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            if (user.getPassword().equals("{noop}" + password)) {
+                return user;
+            }
+        }
+
+        return null;
+    }
 }

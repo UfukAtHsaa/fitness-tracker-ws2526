@@ -18,7 +18,7 @@ import java.util.List;
  * - Appropriate error handling
  */
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/good/users")
 public class UserControllerGood {
 
     private final UserService userService;

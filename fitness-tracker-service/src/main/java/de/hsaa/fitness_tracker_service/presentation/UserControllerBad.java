@@ -16,7 +16,7 @@ import java.util.Map;
  * Zeigt häufige Probleme in studentischem Code
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/bad")
 public class UserControllerBad {
 
     public static final int ADULT_AGE_LIMIT = 18;
