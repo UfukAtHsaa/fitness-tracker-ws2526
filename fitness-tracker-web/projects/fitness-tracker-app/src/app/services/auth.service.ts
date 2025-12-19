@@ -17,8 +17,14 @@ export class AuthService {
 
   constructor(private readonly http: HttpClient) {
     const token = sessionStorage.getItem('token');
+    const userJson = sessionStorage.getItem('user');
+
     this.authSecret$ = new BehaviorSubject<string | undefined>(token || undefined);
-    if (token) {
+
+    if (userJson) {
+      this.userSubject$.next(JSON.parse(userJson));
+    } else if (token) {
+      // If token exists but user details are not in session storage (e.g., old session or direct refresh after initial implementation)
       this.loadUser();
     }
   }
@@ -40,6 +46,7 @@ export class AuthService {
     return this.http.post<UserDetails>(`${this.apiUrl}/login`, {}, { headers }).pipe(
       tap((user) => {
         sessionStorage.setItem('token', token);
+        sessionStorage.setItem('user', JSON.stringify(user));
         this.authSecret$.next(token);
         this.userSubject$.next(user);
       })
@@ -48,6 +55,7 @@ export class AuthService {
 
   logout(): void {
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('user');
     this.authSecret$.next(undefined);
     this.userSubject$.next(undefined);
   }

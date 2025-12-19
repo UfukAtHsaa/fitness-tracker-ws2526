@@ -13,12 +13,10 @@
         Exercises
       </button>
 
-      @if(authService.hasRole('ROLE_ADMIN')) {
       <button mat-button="elevated" extended color="accent" routerLink="/users" class="nav-button">
         <mat-icon>assignment_ind</mat-icon>
         Users
       </button>
-      }
 
       <button mat-button="text" extended color="accent" routerLink="/about" class="nav-button">
         <mat-icon>info</mat-icon>

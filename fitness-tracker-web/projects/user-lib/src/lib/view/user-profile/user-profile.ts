@@ -10,7 +10,6 @@ import { UserFormComponent } from '../../ui/user-form/user-form';
 
 @Component({
   selector: 'lib-user-profile',
-  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, UserFormComponent, MatButtonModule, MatIconModule],
   templateUrl: './user-profile.html',
   styleUrls: ['./user-profile.scss'],

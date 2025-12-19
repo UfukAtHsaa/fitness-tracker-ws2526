@@ -14,7 +14,6 @@ export enum UserListClickAction {
   imports: [MatTableModule, RouterModule],
   templateUrl: './user-list.html',
   styleUrl: './user-list.scss',
-  standalone: true
 })
 export class UserListComponent implements OnInit {
   @Output() userSelected = new EventEmitter<User>();

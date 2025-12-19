@@ -1,12 +1,11 @@
 import { adminGuard } from './services/admin.guard';
 
 import { Routes } from '@angular/router';
+import { About } from './about/about';
 import { Exercises } from './exercises/exercises';
 import { Home } from './home/home';
-import { About } from './about/about';
-import { Users } from './users/users';
-import { authGuard } from './services/auth.guard';
 import { LoginComponent } from './login/login.component';
+import { authGuard } from './services/auth.guard';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
