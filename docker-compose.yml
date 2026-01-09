@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: ./fitness-tracker-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - fitness-network
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:fitnesstrackerdb
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./fitness-tracker-web
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+    networks:
+      - fitness-network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  fitness-network:
+    driver: bridge
+
