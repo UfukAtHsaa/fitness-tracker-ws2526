@@ -61,7 +61,7 @@ export class AuthService {
   }
 
   hasRole(role: string): boolean {
-    return this.userSubject$.value?.authorities.some(a => a.authority === role) || false;
+    return this.userSubject$.value?.authorities?.some(a => a.authority === role) || false;
   }
 
   private loadUser() {
